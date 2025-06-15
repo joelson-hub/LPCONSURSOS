@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramática Essencial da Língua Portuguesa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Azul claro de fundo */
+            color: #334155; /* Cor de texto principal */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            background-color: #4f46e5; /* Índigo */
+            background-image: url("https://esjud.tjac.jus.br/wp-content/uploads/2024/01/2ba77f4d-1012-4095-aedd-56b0de56723d.jpeg");
+            image-orientation: flip;
+            color: white;
+            padding: 2.5rem 0;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .chapter-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #1e293b; /* Azul escuro */
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #6366f1; /* Índigo mais claro */
+            padding-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 600; /* font-semibold */
+            color: #334155; /* Azul principal */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .subsection-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600;
+            color: #475569; /* Azul acinzentado */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #818cf8; /* Índigo claro */
+        }
+        .tip, .macete {
+            background-color: #dbeafe; /* Azul claro para dicas/macetes */
+            color: #1e40af; /* Azul escuro para texto de dicas/macetes */
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            border-left: 5px solid #3b82f6; /* Azul vívido */
+            display: flex;
+            align-items: flex-start;
+        }
+        .tip strong, .macete strong {
+            margin-right: 0.5rem;
+            font-weight: 700;
+            color: #1d4ed8; /* Azul mais escuro */
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            padding-left: 0.5rem;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            padding-left: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .table-of-contents {
+            position: relative;
+            width: 100%;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .table-of-contents h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .table-of-contents ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .table-of-contents li a {
+            display: block;
+            padding: 0.5rem 0;
+            color: #475569;
+            transition: color 0.2s ease-in-out;
+        }
+        .table-of-contents li a:hover {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+        .table-of-contents ul ul {
+            margin-left: 1rem;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 0.5rem;
+        }
+        .footnote {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #cbd5e1;
+        }
+        /* Responsividade para desktop */
+        @media (min-width: 1024px) {
+            .grid-layout {
+                display: grid;
+                grid-template-columns: 1fr 3fr; /* 1/4 para sumário, 3/4 para conteúdo */
+                gap: 2rem;
+            }
+            .table-of-contents {
+                position: sticky; /* Sticky apenas em desktop */
+                top: 2rem; /* Distância do topo */
+                align-self: start; /* Alinha o sumário ao topo */
+                width: auto; /* Deixa a largura ser controlada pelo grid */
+            }
+        }
+        /* Estilo para expandir/recolher dicas */
+        .collapsible-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #1e40af;
+            user-select: none; /* Prevent text selection on double click */
+        }
+        .collapsible-content {
+            display: none; /* Conteúdo oculto por padrão */
+            margin-top: 0.5rem;
+        }
+        .collapsible-header::after {
+            content: '+';
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active::after {
+            content: '-';
+            transform: rotate(0deg);
+        }
+        .image-description {
+            background-color: #eff6ff; /* Lightest blue */
+            border-left: 4px solid #93c5fd; /* Medium blue */
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #1e3a8a; /* Darker blue text */
+            border-radius: 0.5rem;
+        }
+        .textarea-reviewer, .textarea-concept, .input-concept {
+            width: 100%;
+            min-height: 150px;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            resize: vertical;
+        }
+        .input-concept {
+            min-height: auto; /* override min-height for input type text */
+            height: 40px; /* fixed height for input */
+        }
+        .button-reviewer, .button-concept-explorer {
+            background-color: #4f46e5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .button-reviewer:hover, .button-concept-explorer:hover {
+            background-color: #4338ca;
+        }
+        .loading-indicator {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #64748b;
+            display: none; /* Hidden by default */
+        }
+        .response-area {
+            background-color: #ecfdf5; /* Light green for response */
+            border-left: 5px solid #10b981; /* Green border */
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="header">
+        <h1 class="text-5xl font-extrabold mb-2">Gramática Essencial da Língua Portuguesa</h1>
+        <p class="text-xl font-light">Um guia completo e visual para seus estudos</p>
+    </div>
+
+    <div class="container grid-layout">
+        <aside class="table-of-contents">
+            <h3>Sumário</h3>
+            <ul>
+                <li><a href="#ortografia-acentuacao">1. Ortografia e Acentuação</a>
+                    <ul>
+                        <li><a href="#emprego-acentuacao-grafica">1.1. Emprego da Acentuação Gráfica</a></li>
+                        <li><a href="#encontros-vocalicos">1.2. Encontros Vocálicos</a></li>
+                        <li><a href="#regras-acentuacao-especificas">1.3. Regras de Acentuação Específicas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#grafia-maiusculas">2. Grafia e Emprego de Iniciais Maiúsculas</a>
+                    <ul>
+                        <li><a href="#uso-maiusculas">2.1. Uso das Maiúsculas</a></li>
+                        <li><a href="#uso-x">2.2. Uso de "X"</a></li>
+                        <li><a href="#formacoes-isar-izar">2.3. Formações "isar" / "izar"</a></li>
+                        <li><a href="#emprego-hifen">2.4. Emprego do Hífen</a></li>
+                    </ul>
+                </li>
+                <li><a href="#morfologia">3. Morfologia</a>
+                    <ul>
+                        <li><a href="#estrutura-palavras">3.1. Estrutura das Palavras</a></li>
+                        <li><a href="#classes-gramaticais">3.2. Classes Gramaticais</a></li>
+                        <li><a href="#transitividade-lhe-lo">3.3. Transitividade do LHE e do LO</a></li>
+                    </ul>
+                </li>
+                <li><a href="#verbos">4. Verbos</a>
+                    <ul>
+                        <li><a href="#classificacao-verbos">4.1. Classificação dos Verbos</a></li>
+                        <li><a href="#flexao-pessoa-numero">4.2. Flexão Verbal de Pessoa e Número</a></li>
+                        <li><a href="#flexao-tempo">4.3. Flexão Verbal de Tempo (Tempos do Indicativo)</a></li>
+                        <li><a href="#flexao-modo">4.4. Flexão Verbal de Modo</a></li>
+                        <li><a href="#flexao-voz">4.5. Flexão Verbal de Voz</a></li>
+                        <li><a href="#formas-nominais">4.6. Formas Nominais do Verbo</a></li>
+                    </ul>
+                </li>
+                <li><a href="#sintaxe">5. Sintaxe</a>
+                    <ul>
+                        <li><a href="#analise-sintatica">5.1. Análise Sintática</a></li>
+                    </ul>
+                </li>
+                <li><a href="#concordancia">6. Concordância Verbal e Nominal</a>
+                    <ul>
+                        <li><a href="#concordancia-verbal">6.1. Concordância Verbal</a></li>
+                        <li><a href="#regencia-verbal-nominal">6.2. Regência Verbal e Nominal</a></li>
+                    </ul>
+                </li>
+                <li><a href="#pontuacao">7. Pontuação</a>
+                    <ul>
+                        <li><a href="#uso-virgula">7.1. Uso da Vírgula</a></li>
+                        <li><a href="#uso-ponto-virgula">7.2. Uso do Ponto e Vírgula</a></li>
+                        <li><a href="#uso-dois-pontos">7.3. Uso dos Dois Pontos</a></li>
+                        <li><a href="#uso-aspas">7.4. Uso das Aspas</a></li>
+                        <li><a href="#uso-travessao">7.5. Uso do Travessão</a></li>
+                    </ul>
+                </li>
+                <li><a href="#funcoes-morfossintaticas">8. Funções Morfossintáticas</a>
+                    <ul>
+                        <li><a href="#funcoes-se">8.1. Funções morfossintáticas da palavra SE</a></li>
+                        <li><a href="#funcoes-que">8.2. Funções morfossintáticas da palavra QUE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#crase">9. Crase</a>
+                    <ul>
+                        <li><a href="#o-que-e-crase">9.1. O que é Crase?</a></li>
+                        <li><a href="#regras-crase">9.2. Regras da Crase</a></li>
+                    </ul>
+                </li>
+                <li><a href="#interpretacao-texto">10. Interpretação de Texto</a>
+                    <ul>
+                        <li><a href="#nocoes-gerais-interpretacao">10.1. Noções Gerais de Compreensão e Interpretação de Texto</a></li>
+                        <li><a href="#denotacao-conotacao">10.2. Denotação e Conotação</a></li>
+                        <li><a href="#pressupostos-subentendidos">10.3. Pressupostos e Subentendidos</a></li>
+                        <li><a href="#reificacao">10.4. Reificação</a></li>
+                        <li><a href="#figuras-linguagem">10.5. Figuras de Linguagem</a></li>
+                        <li><a href="#causa-consequencia">10.6. Causa x Consequência</a></li>
+                        <li><a href="#tipologia-textual">10.7. Tipologia Textual</a></li>
+                        <li><a href="#significacao-contextual">10.8. Significação Contextual de Palavras e Expressões. Sinônimos e Antônimos.</a></li>
+                        <li><a href="#elipse">10.9. Elipse</a></li>
+                    </ul>
+                </li>
+                <li><a href="#coesao-coerencia">11. Coesão e Coerência</a>
+                    <ul>
+                        <li><a href="#coesao-coerencia-geral">11.1. Coesão e Coerência</a></li>
+                        <li><a href="#anafora-catafora">11.2. Anáfora e Catáfora</a></li>
+                    </ul>
+                </li>
+                <li><a href="#reescritura-texto">12. Reescritura de Texto</a>
+                    <ul>
+                        <li><a href="#pontos-importantes-reescritura">12.1. Pontos Importantes na Reescritura</a></li>
+                    </ul>
+                </li>
+                <li><a href="#revisor-texto">13. Ferramenta: Revisor de Texto ✨</a></li>
+                <li><a href="#explorador-conceitos">14. Ferramenta: Explorador de Conceitos ✨</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="ortografia-acentuacao" class="card">
+                <h2 class="chapter-title">1. Ortografia e Acentuação</h2>
+                <div id="emprego-acentuacao-grafica" class="subsection-title">1.1. Emprego da Acentuação Gráfica</div>
+                <p>As palavras podem ser classificadas quanto à intensidade da sílaba tônica:</p>
+                <ul>
+                    <li><strong>Átonas</strong>: Possuem sílabas com menor intensidade (fraca).</li>
+                    <li><strong>Tônicas</strong>: Possuem sílabas com maior intensidade (forte).</li>
+                </ul>
+                <p>De acordo com a posição da sílaba tônica, as palavras são classificadas em:</p>
+                <ul>
+                    <li><strong>Oxítonas</strong>: A sílaba tônica é a última. Exemplos: Café, Anzol.</li>
+                    <li><strong>Paroxítonas</strong>: A sílaba tônica é a penúltima. Exemplos: Dólar, planeta, vírus.</li>
+                    <li><strong>Proparoxítonas</strong>: A sílaba tônica é a antepenúltima. Exemplos: Cúpula, trânsito, médico.</li>
+                    <li><span class="macete"><strong>Macete:</strong> Em regra: Toda proparoxítona deve ser acentuada.</span></li>
+                </ul>
+
+                <div id="encontros-vocalicos" class="subsection-title">1.2. Encontros Vocálicos</div>
+                <ul>
+                    <li><strong>Hiato</strong>: Duas vogais em sílabas distintas. Não existem duas vogais numa mesma sílaba.
+                        <ul>
+                            <li>Exemplos: Ceará (CE-A-RÁ), Faísca (FA-ÍS-CA), Saúde (SA-Ú-DE).</li>
+                            <li>Não se acentua o hiato 'oo'. Exemplos: enjoo, voo, abençoo, perdoo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ditongo</strong>: Uma vogal e uma semivogal na mesma sílaba.
+                        <ul>
+                            <li>Exemplo: Poeira (PO – EI – RA).</li>
+                            <li>Não se acentua os ditongos abertos -ei e -oi nas palavras paroxítonas. Exemplos: Assembleia, ideia e coreia.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="regras-acentuacao-especificas" class="subsection-title">1.3. Regras de Acentuação Específicas</div>
+                <ul>
+                    <li>Todos os monossílabos tônicos terminados em A, E, O, são acentuados, seguidos ou não de S.
+                        <ul>
+                            <li>A, as: pá, já, gás.</li>
+                            <li>E, es: pé, mês, três.</li>
+                            <li>O, os: pó, só, nós.</li>
+                        </ul>
+                    </li>
+                    <li>Toda oxítona terminada em A, E, O, EM, ENS são acentuadas, seguidas ou não de S.
+                        <ul>
+                            <li>A, as: crachá, cajá.</li>
+                            <li>E, es: você, café, jacarés.</li>
+                            <li>O, os: paletó, jiló.</li>
+                            <li>EM: ninguém, também.</li>
+                            <li>ENS: parabéns.</li>
+                            <li>Por isso não se acentuam as paroxítonas "garagem", "item", "hifens", porque são paroxítonas e não oxítonas.</li>
+                        </ul>
+                    </li>
+                    <li>Acentuam-se os verbos terminados em "a", "e", "o" seguidos dos pronomes oblíquos átonos "la", "los", "las".
+                        <ul>
+                            <li>Exemplo: Vou cantá-la (oxítona, independentemente do "la"). Vou bebê-la.</li>
+                        </ul>
+                    </li>
+                    <li>Toda paroxítona terminada em ditongo oral é acentuada (ie, ia).
+                        <ul>
+                            <li>Exemplos: imundície, lírio, cerimônia, história.</li>
+                        </ul>
+                    </li>
+                    <li><span class="macete"><strong>Dica:</strong> Til (~) não é acento, é apenas um sinal indicativo de nasalização (sinal gráfico). Exemplo: "situação" e "educação".</span></li>
+                </ul>
+            </section>
+
+            <section id="grafia-maiusculas" class="card">
+                <h2 class="chapter-title">2. Grafia e Emprego de Iniciais Maiúsculas</h2>
+                <div id="uso-maiusculas" class="subsection-title">2.1. Uso das Maiúsculas</div>
+                <ol>
+                    <li>Início das frases.
+                        <ul><li>Exemplo: Este é o tema da pauta. Trata-se da maior empresa petrolífera do Brasil.</li></ul>
+                    </li>
+                    <li>Substantivos próprios.
+                        <ul><li>Exemplo: Maria José foi escolhida a funcionária do mês. Zezé foi escolhida a funcionária do mês. A região com a maior biodiversidade do mundo é a Floresta Amazônica. A deusa grega do amor é Afrodite.</li></ul>
+                    </li>
+                    <li>Festas e datas comemorativas.
+                        <ul><li>Exemplo: A família se reúne sempre no Natal. Já planejaram o trabalho sobre a Independência do Brasil?</li></ul>
+                    </li>
+                    <li>Siglas, símbolos e abreviaturas.
+                        <ul><li>Exemplo: ABNT - Associação Brasileira de Normas Técnicas. Al - alumínio. V.Sa. - Vossa Senhoria.</li></ul>
+                    </li>
+                    <li>Nomes de instituições e repartições.
+                        <ul><li>Exemplo: Os dados foram retirados do Instituto Brasileiro de Geografia e Estatística. São sérios os problemas do Sistema Único de Saúde.</li></ul>
+                    </li>
+                </ol>
+
+                <div id="uso-x" class="subsection-title">2.2. Uso de "X"</div>
+                <ul>
+                    <li>Depois de ME: usa-se o X. Ex: Mexer.</li>
+                    <li>Depois de EN: usa-se o X. Ex: Enxaqueca.</li>
+                </ul>
+
+                <div id="formacoes-isar-izar" class="subsection-title">2.3. Formações "isar" / "izar"</div>
+                <span class="macete"><strong>Dica:</strong> Respeite a palavra de origem: se a palavra de origem tem "s", grafa-se com "s" (ex: Pesqui**s**a = Pesqui**s**ar). Caso contrário, grafe com "z" (ex: Economia = Economi**z**ar).</span>
+
+                <div id="emprego-hifen" class="subsection-title">2.4. Emprego do Hífen</div>
+                <ul>
+                    <li><strong>MAL + vogal ou H/L</strong>: terá hífen. Ex: mal-acabado, mal-humorado. Nos demais casos, escreve-se sem hífen, Ex: malsucedido, malcriado.</li>
+                    <li>O advérbio <strong>BEM</strong> acompanha-se de hífen quando o segundo elemento composto começa por vogal. Ex.: bem-acabado, bem-aventurado, bem-educado.</li>
+                    <li><span class="macete"><strong>Macete:</strong> Sempre exigirão hífen: Além, aquém, ex, Vice.</span></li>
+                </ul>
+            </section>
+
+            <section id="morfologia" class="card">
+                <h2 class="chapter-title">3. Morfologia</h2>
+                <div id="estrutura-palavras" class="subsection-title">3.1. Estrutura das Palavras</div>
+                <ul>
+                    <li><strong>Radical</strong>: É a parte invariável da palavra. Ex: ATIVo, ATIVar, ATIVismo.</li>
+                    <li><strong>Vogal Temática</strong>: Liga o radical à desinência. Ex: BEIJaSTE.</li>
+                    <li><strong>Desinência</strong>: São elementos terminais indicativos das flexões das palavras.
+                        <ul>
+                            <li>Gênero: ALUN**O**, ALUN**A**.</li>
+                            <li>Número: ALUNO**S**, ALUNAS.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Afixos</strong>:
+                        <ul>
+                            <li><strong>Prefixos</strong>: Vêm ANTES do radical. Ex: **in**ATIVO.</li>
+                            <li><strong>Sufixo</strong>: Vêm DEPOIS do radical. Ex: FELIZ**mente**, PENSA**mento**.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Derivação Prefixal e Sufixal</strong>: Antes e depois do radical. Ex: deslealmente.
+                        <ul>
+                            <li><span class="tip"><strong>Dica:</strong> Se remover um deles, a palavra ainda existe: Desleal ou Lealmente.</span></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="classes-gramaticais" class="subsection-title">3.2. Classes Gramaticais</div>
+                <h3 class="subsection-title text-gray-700">3.2.1. Variáveis</h3>
+                <ul>
+                    <li><strong>Artigo</strong>: Determina o substantivo.
+                        <ul>
+                            <li>Definidos (o, a, os, as).</li>
+                            <li>Indefinidos (um, uns, uma, umas).</li>
+                            <li>É antes de substantivo. Ex: **a** menina bonita.</li>
+                            <li>"Um" (artigo indefinido) = Incerteza.</li>
+                            <li>"O" (artigo definido) = Certeza.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Substantivo</strong>: Nomeia todos os seres existentes. Ex: pessoas, coisas etc.</li>
+                    <li><strong>Adjetivo</strong>: Qualifica o substantivo. Ex: jovem inteligente.</li>
+                    <li><strong>Numeral</strong>: Quantifica. Ex: primeiro colocado.</li>
+                    <li><strong>Pronome</strong>: Acompanha ou substitui o nome. Retoma o termo anterior. Ex: ele/ela/isso/aquilo.
+                        <ul>
+                            <li>Existem 6 classificações:
+                                <ul>
+                                    <li><strong>Pessoais</strong>: eu, tu, nós, lhe (pessoas).
+                                        <ul>
+                                            <li>Oblíquos átonos: Acompanham verbos (me, te, lhe, o, a, se, nos, vos, lhes, os, as, se).</li>
+                                            <li>Oblíquos tônicos: Têm preposição / Seguidos de preposição (mim, comigo, ti, contigo, ele, ela, si, consigo, nós, conosco, vós, convosco, ele, ela, si, consigo). Ex: Você gosta de mim?</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Possessivos</strong>: meu, nossa, tua, suas (posse).</li>
+                                    <li><strong>Demonstrativos</strong>: este, esse, aquele (demonstra algo).</li>
+                                    <li><strong>Indefinidos</strong>: alguém, nada, tudo, muitos (indefine).</li>
+                                    <li><strong>Interrogativos</strong>: que, quem, qual, quais (perguntas).</li>
+                                    <li><strong>Relativos</strong>: que, o/a qual, cujo, onde (relação a algo). Representam nomes já mencionados anteriormente e com os quais se relacionam. Introduzem as orações subordinadas adjetivas.
+                                        <ul>
+                                            <li><strong>Explicativa</strong>: TEM VÍRGULA e se refere ao TODO.</li>
+                                            <li><strong>Restritiva</strong>: NÃO tem VÍRGULA e se refere a uma PARTE.</li>
+                                            <li><span class="macete"><strong>Macete:</strong> Para saber se é pronome relativo, substitua pelo O QUAL, A QUAL, OS QUAIS, AS QUAIS. Se o sentido e a coesão forem preservados, trata-se de um pronome relativo.</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Verbo</strong>: Expressa AÇÃO, ESTADO (verbos de ligação) ou fenômenos meteorológicos.
+                        <ul>
+                            <li>Flexiona em 5 categorias: Pessoa, número, tempo, modo e voz.</li>
+                            <li>Divide-se em 3 partes: Radical, vogal temática e desinência.</li>
+                            <li>Radical: É a parte invariável do verbo. Ex: ATIVo, ATIVar, ATIVismo.</li>
+                            <li>Vogal Temática: Liga o radical à desinência. Ex: TU BEIJaSTE.</li>
+                            <li>Desinência: São elementos terminais indicativos das flexões das palavras.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="subsection-title text-gray-700">3.2.2. Invariáveis</h3>
+                <ul>
+                    <li><strong>Preposição</strong>: Ligar uma palavra a outra. Antes de verbo (liga termos da oração).</li>
+                    <li><strong>Interjeição</strong>: Denota sentimentos e emoções. Ex: Ufa! Hum! Caramba!</li>
+                    <li><strong>Conjunção</strong>: Liga duas orações de mesmo valor gramatical. Ex: mas, portanto, conforme.</li>
+                    <li><strong>Advérbio</strong>: Modifica o verbo, o adjetivo ou outro advérbio, exprimindo circunstâncias de tempo, modo, intensidade, etc. É invariável. Traz circunstância à ação do verbo.
+                        <ul>
+                            <li>Tipos:
+                                <ul>
+                                    <li><strong>De modo</strong>: Bem, mal, pior, depressa, devagar, e grande parte das palavras que terminam em "-mente".</li>
+                                    <li><strong>Intensidade</strong>: Muito, demais, pouco, bastante, mais, menos, quanto, tudo, nada, todo.</li>
+                                    <li><strong>De lugar</strong>: Aí, aqui, acima, adentro, dentro, afora, atrás, detrás, além, aquém, antes, aonde, longe, perto.</li>
+                                    <li><strong>De tempo</strong>: Hoje, logo, agora, amanhã, ontem, tarde, breve, cedo, depois, enfim, nunca, jamais, sempre, doravante, outrora, primeiramente, imediatamente, antigamente.</li>
+                                    <li><strong>De negação</strong>: Não, nem, tampouco, nunca, jamais.</li>
+                                    <li><strong>De afirmação</strong>: Sim, decididamente, certamente, realmente, certo, efetivamente.</li>
+                                    <li><strong>De dúvida</strong>: Possivelmente, provavelmente, acaso, porventura, será, talvez, casualmente.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="transitividade-lhe-lo" class="subsection-title">3.3. Transitividade do LHE e do LO</div>
+                <ul>
+                    <li><strong>LHE</strong>: Aplicado a objeto indireto.</li>
+                    <li><strong>LO</strong>: Aplicado a objeto direto.</li>
+                </ul>
+            </section>
+
+            <section id="verbos" class="card">
+                <h2 class="chapter-title">4. Verbos</h2>
+                <div id="classificacao-verbos" class="subsection-title">4.1. Classificação dos Verbos</div>
+                <ul>
+                    <li>Quando o verbo indica um ESTADO, ele é verbo de ligação.</li>
+                    <li>Quando o verbo indica uma AÇÃO, ele é verbo transitivo ou intransitivo.</li>
+                    <li><strong>Verbo transitivo</strong>: PEDE complemento.
+                        <ul>
+                            <li><strong>Verbo transitivo direto</strong>: NÃO pede preposição. Ex: João comeu o bolo.</li>
+                            <li><strong>Verbo transitivo indireto</strong>: Pede preposição. Ex: João precisa de dinheiro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verbo intransitivo</strong>: NÃO PEDE complemento. Ex: João, viajei.</li>
+                    <li><span class="macete"><strong>Macete:</strong> O verbo HAVER, quando tem sentido de Existir, Ocorrer, Acontecer (EOA), é impessoal e NÃO flexiona.</span></li>
+                </ul>
+
+                <div id="flexao-pessoa-numero" class="subsection-title">4.2. Flexão Verbal de Pessoa e Número</div>
+                <ul>
+                    <li>Os verbos sofrem flexão em NÚMERO, podendo ser conjugados no singular ou no plural:
+                        <ul>
+                            <li><strong>Singular</strong>: Indicam apenas UM sujeito verbal. Ex: Ele tem.</li>
+                            <li><strong>Plural</strong>: Indicam VÁRIOS sujeitos verbais. Ex: Eles têm.</li>
+                        </ul>
+                    </li>
+                    <li>Os verbos sofrem flexão em pessoa, havendo TRÊS pessoas verbais:
+                        <ul>
+                            <li>A 1ª pessoa verbal indica quem fala (eu e nós).</li>
+                            <li>A 2ª pessoa verbal indica com quem se fala (tu e vós).</li>
+                            <li>A 3ª pessoa verbal indica de quem se fala (ele e eles).</li>
+                        </ul>
+                    </li>
+                    <li>Pessoas do discurso: Eu (1ª sing.), Tu (2ª sing.), Ele (3ª sing.), Nós (1ª plur.), Vós (2ª plur.), Eles (3ª plur.).</li>
+                </ul>
+
+                <div id="flexao-tempo" class="subsection-title">4.3. Flexão Verbal de Tempo (Tempos do Indicativo)</div>
+                <ul>
+                    <li><strong>Presente</strong>: Expressa um fato atual. Ex: Eu estudo no colégio.</li>
+                    <li><strong>Pretérito Imperfeito</strong>: Expressa um fato ocorrido num momento anterior ao atual, mas que não foi completamente terminado (ideia de continuidade). Ex: ele estudava as ligações quando foi interrompido.</li>
+                    <li><strong>Pretérito Perfeito (simples)</strong>: Expressa um fato ocorrido num momento anterior ao atual e que foi completamente terminado. Ex: Ele estudou as ligações ontem à noite.</li>
+                    <li><strong>Pretérito Perfeito (composto)</strong>: Expressa um fato que teve início no passado e que pode se prolongar até o momento atual. Ex: Tenho estudado muito para os exames.</li>
+                    <li><strong>Pretérito-mais-que-perfeito</strong>: Expressa um fato ocorrido antes de outro já terminado. Ex: Ele já tinha estudado as ligações quando os amigos chegaram (forma composta); Ele já estudara as ligações quando os amigos chegaram (forma simples).</li>
+                    <li><strong>Futuro do Presente (simples)</strong>: Enuncia um fato num momento vindouro ao atual. Ex: Ele estudará as ligações amanhã.</li>
+                    <li><strong>Futuro do Presente (composto)</strong>: Enuncia um fato que deve ocorrer posteriormente a um momento atual, mas que já terminado antes de outro fato futuro. Ex: ANTES de bater o sinal, os alunos já terão terminado o teste.</li>
+                    <li><strong>Futuro do Pretérito (simples)</strong>: Enuncia um fato que pode ocorrer posteriormente a um determinado fato passado. Ex: Se eu Tivesse dinheiro, viajaria nas férias.</li>
+                    <li><strong>Futuro do Pretérito (composto)</strong>: Enuncia um fato que poderia ter ocorrido posteriormente a um determinado fato passado. Ex: Se eu tivesse ganhado esse dinheiro, teria viajado nas férias.</li>
+                </ul>
+
+                <div id="flexao-modo" class="subsection-title">4.4. Flexão Verbal de Modo</div>
+                <ul>
+                    <li><strong>Indicativo</strong>: Indica certeza e convicção. Ex: Eu estudei hoje.</li>
+                    <li><strong>Subjuntivo</strong>: Indica incerteza e possibilidade. Ex: TALVEZ eu estude hoje.</li>
+                    <li><strong>Imperativo</strong>: Indica ordem. Ex: ESTUDE, meu jovem!</li>
+                </ul>
+
+                <div id="flexao-voz" class="subsection-title">4.5. Flexão Verbal de Voz</div>
+                <p>Existem 3 vozes verbais:</p>
+                <ul>
+                    <li><strong>Voz Ativa</strong>: O sujeito pratica a ação expressa pelo verbo (é um sujeito agente). Ex: A criança ALIMENTOU o animal.</li>
+                    <li><strong>Voz Passiva</strong>: O sujeito é o paciente da ação expressa pelo verbo. Ex: O bolo FOI COMIDO por João. (Formada por Verbo SER ou ESTAR + Particípio + Preposição).</li>
+                    <li><strong>Voz Reflexiva</strong>: O sujeito é ao mesmo tempo agente e paciente da ação expressa pelo verbo. Ex: Eles abraçaram-se durante muito tempo.</li>
+                </ul>
+
+                <div id="formas-nominais" class="subsection-title">4.6. Formas Nominais do Verbo</div>
+                <ul>
+                    <li><strong>Infinitivo</strong>: Termina em “R”. Ex: cantar, partir.</li>
+                    <li><strong>Gerúndio</strong>: Termina em “NDO”. Ex: cantando, partindo.</li>
+                    <li><strong>Particípio</strong>: Termina em “DO”. Ex: cantado, partido.</li>
+                </ul>
+            </section>
+
+            <section id="sintaxe" class="card">
+                <h2 class="chapter-title">5. Sintaxe</h2>
+                <div id="analise-sintatica" class="subsection-title">5.1. Análise Sintática</div>
+                <p>A sintaxe trabalha a relação das palavras dentro de uma oração.</p>
+                <ul>
+                    <li><strong>Sujeito</strong>: É de quem se fala na oração. Ex: João é inteligente.</li>
+                    <li><strong>Predicado</strong>: É o que se fala do sujeito. Ex: João é inteligente.</li>
+                    <li><strong>Complemento Verbal</strong>: É o termo da oração que completa ou integra o sentido de verbos transitivos. Pergunta: "O quê?" ou "Quem?" após o verbo. Ex: Maria gosta de chocolate.</li>
+                    <li><strong>Complemento Nominal</strong>: É algo que completa um nome (substantivo, adjetivo ou advérbio). Pergunta: "De quem?" ou "De quê?" após o nome. Ex: O sorriso da criança era bonito. Ele cumpre a função de completar ou alterar o sentido de um nome e é sempre introduzido por uma preposição.</li>
+                    <li><strong>Adjunto Adnominal</strong>: Junto do nome, é o termo acessório da oração que tem a função de caracterizar ou determinar um substantivo.</li>
+                    <li><strong>Adjunto Adverbial</strong>: Junto do verbo; é um termo acessório com função de advérbio na oração, ajudando a indicar uma circunstância ou a intensificar o significado de um verbo, um adjetivo ou de outro advérbio.</li>
+                    <li><strong>Predicativo</strong>: É o termo que confere ao sujeito ou ao objeto uma qualidade, uma característica.
+                        <ul>
+                            <li><strong>Predicativo do Sujeito</strong>: Termo que caracteriza o sujeito da oração. Ex: Ela entrou em casa apressada.</li>
+                            <li><strong>Predicativo do Objeto</strong>: Termo que caracteriza o objeto direto da oração. Ex: Ela viu um homem apressado.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Agente da Passiva</strong>: É um termo da oração que pratica a ação expressa pelo verbo.</li>
+                    <li><strong>Aposto</strong>: Explicação (vírgula). Ex: Joelson, professor de TI, tem 27 anos.</li>
+                    <li><strong>Vocativo</strong>: Invocar alguém. Ex: João, tudo bem com você?</li>
+                    <li><strong>Oração</strong>: Precisa ter VERBO. Ex: João gosta de bolo.</li>
+                    <li><strong>Frase</strong>: Tem sentido completo. Ex: Boa sorte!</li>
+                </ul>
+            </section>
+
+            <section id="concordancia" class="card">
+                <h2 class="chapter-title">6. Concordância Verbal e Nominal</h2>
+                <div id="concordancia-verbal" class="subsection-title">6.1. Concordância Verbal</div>
+                <p>É a relação do verbo com seu sujeito.</p>
+                <ul>
+                    <li>Basicamente, uma oração deve ter um verbo e este verbo normalmente se flexiona de acordo com o sujeito, e relaciona-se com o predicado de acordo com a transitividade.</li>
+                    <li>Se o SUJEITO estiver no singular, é natural que o verbo também esteja.</li>
+                    <li><strong>Sujeito Simples</strong>: Não importa a posição do sujeito, o verbo concorda. Ex: "Nós fomos estudar na casa de Milena."</li>
+                    <li><strong>Sujeito Composto</strong>: Sujeito antes do verbo, o verbo fica no plural. Ex: "João e Carlos dançaram na pista."</li>
+                    <li><span class="tip"><strong>Cuidado:</strong> NÃO se separa sujeito do verbo por meio de vírgulas.</span></li>
+                </ul>
+
+                <div id="regencia-verbal-nominal" class="subsection-title">6.2. Regência Verbal e Nominal</div>
+                <ul>
+                    <li><strong>Regência verbal</strong>: Relação do verbo com seu complemento.
+                        <ul>
+                            <li>Exemplo: Aspirar no sentido de inalar é VTD (nós aspiramos o ar); Aspirar no sentido de almejar é VTI (nós, concurseiros, aspiramos ao cargo).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Regência nominal</strong>: É a regência do NOME, ocorre entre os nomes (substantivo, adjetivo ou advérbio) e seu complemento.
+                        <ul>
+                            <li>Exemplos: Diferente de, ansioso por, responsável por, alheio a, perito em.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="pontuacao" class="card">
+                <h2 class="chapter-title">7. Pontuação</h2>
+                <div id="uso-virgula" class="subsection-title">7.1. Uso da Vírgula</div>
+                <ul>
+                    <li>Isolar o Vocativo (invocar alguém). Ex: MARIA, venha cá!</li>
+                    <li>Isolar o Aposto (explica o termo anterior). Ex: Joelson, professor de TI, está fazendo regime.</li>
+                    <li>Isolar Datas e endereços. Ex: Macapá, 16 de fevereiro de 2023.</li>
+                    <li>Enumerações. Ex: Fui à feira comprar abacaxi, Laranja, limão e pera.</li>
+                    <li>Separar orações coordenadas assindéticas (quando temos várias orações ligadas umas às outras, mas não usamos conjunções). Ex: João gritou, Ana saltou, pedro dançou, todos sorriram.</li>
+                    <li>Isolar Elipse (ocultar um termo já citado anteriormente). Ex: Carlos FALA inglês e Fernanda, francês.</li>
+                    <li>Isolar orações intercaladas. Ex: Somos uma equipe, lembrou o treinador, neste campeonato.</li>
+                    <li>Isolar orações subordinadas adjetivas explicativas. Ex: O homem, que é um ser racional, vive pouco.</li>
+                    <li>Isolar conjunções adversativas e conclusivas (sempre levam vírgula antes deles na oração). Ex: Fui ao jogo de futebol, MAS não encontrei ninguém.</li>
+                    <li>Isolar elementos explicativos. Ex: isto é, ou melhor, por exemplo, digo...</li>
+                    <li>Isolar Adjuntos e orações adverbiais deslocadas. Ex: Com certeza, ele é o melhor.</li>
+                    <li><span class="tip"><strong>Cuidado:</strong> NÃO se separa sujeito do verbo por meio de vírgulas.</span></li>
+                    <li>A vírgula é facultativa diante de adjuntos adverbiais de curta extensão (até duas palavras). Ex: Dias depois, o prefeito me chamara ao seu gabinete.</li>
+                    <li><div class="collapsible-header">Cuidado com o "pois" <span class="arrow"></span></div>
+                        <div class="collapsible-content">
+                            <ul>
+                                <li>Vírgula após a palavra POIS (,) CONCLUSIVA.</li>
+                                <li>Vírgula antes da palavra (,) POIS EXPLICATIVA.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <div id="uso-ponto-virgula" class="subsection-title">7.2. Uso do Ponto e Vírgula</div>
+                <ul>
+                    <li>Pode ter a mesma função que a vírgula.</li>
+                    <li>Enumerar uma lista de elementos. Ex: Precisamos arrumar em casa: A torneira; O banheiro; A cama e chuveiro.</li>
+                </ul>
+
+                <div id="uso-dois-pontos" class="subsection-title">7.3. Uso dos Dois Pontos</div>
+                <ul>
+                    <li>Abrir diálogo em um discurso. Ex: João disse: - eu sou inteligente.</li>
+                    <li>Explicação ou enumeração. Ex: Observe: o Brasília é a capital do Brasil.</li>
+                    <li>Antes de citação. Ex: O ministro da justiça comentou: “Faca na caveira”.</li>
+                </ul>
+
+                <div id="uso-aspas" class="subsection-title">7.4. Uso das Aspas</div>
+                <ul>
+                    <li><strong>Enfatizar Discursos</strong>: Após encontrar o vaso quebrado, minha mãe disse: "Muito "bonito" o que você fez".</li>
+                    <li><strong>Citações Diretas</strong>: Segundo o Presidente da República: "Iremos combater a crise".</li>
+                    <li><strong>Estrangeirismo</strong>: Esperamos o "feedback" da professora.</li>
+                    <li><strong>Neologismo</strong>: Essa noite vamos "caetanear" muito no show de Caetano Veloso.</li>
+                    <li><strong>Gírias</strong>: A Cibele disse que "não rolou" as vendas de bilhetes.</li>
+                    <li><strong>Citar Obras</strong>: A "Gioconda" é a obra mais famosa de Leonardo Da Vinci; O autor relata em seu artigo intitulado "Memórias de um Soldado", sua vida durante a guerra.</li>
+                </ul>
+
+                <div id="uso-travessao" class="subsection-title">7.5. Uso do Travessão</div>
+                <p>O travessão pode ser usado para:</p>
+                <ol>
+                    <li>Indicar discurso direto.</li>
+                    <li>Isolar comentário no texto.</li>
+                    <li>Isolar aposto explicativo.</li>
+                    <li>Reforçar parte final da sentença.</li>
+                </ol>
+                <div class="image-description">
+                    <p>Descrição da imagem "Como usar o Travessão":</p>
+                    <ol>
+                        <li>Indicar discurso direto: Ex.: O homem disse: — As pessoas boas devem amar seus inimigos.</li>
+                        <li>Isolar comentário no texto: Ex.: Pedro trouxe — ele sempre faz isso — presentes para todos.</li>
+                        <li>Isolar aposto explicativo: Ex.: Rubem Fonseca — o autor do brutalismo — foi muito prolífico.</li>
+                        <li>Reforçar parte final da sentença: Ex.: Para ser aprovado, deve estudar muito — muito mesmo.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="funcoes-morfossintaticas" class="card">
+                <h2 class="chapter-title">8. Funções Morfossintáticas</h2>
+                <div id="funcoes-se" class="subsection-title">8.1. Funções morfossintáticas da palavra SE</div>
+                <p>A palavra "SE" pode ter diversas funções morfossintáticas, dependendo do contexto:</p>
+                <ul>
+                    <li><strong>Pronome Apassivador (Partícula Apassivadora - PA)</strong>: O sujeito sofre a ação.
+                        <ul>
+                            <li>Ex: Vendem-se casas. (Casas são vendidas).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pronome Reflexivo</strong>: A ação recai sobre o próprio sujeito.
+                        <ul>
+                            <li>Ex: Ele se cortou. (Cortou a si mesmo).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Índice de Indeterminação do Sujeito (IIS)</strong>: O sujeito é indeterminado.
+                        <ul>
+                            <li>Ex: Precisa-se de funcionários. (Alguém precisa de funcionários).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Parte Integrante do Verbo (PIV)</strong>: Verbos pronominais.
+                        <ul>
+                            <li>Ex: Queixar-se. Arrepender-se.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conjunção Subordinativa Integrante</strong>: Introduz orações subordinadas substantivas.
+                        <ul>
+                            <li>Ex: Pergunto-lhe se ele vem.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conjunção Subordinativa Condicional</strong>: Introduz orações subordinadas adverbiais condicionais.
+                        <ul>
+                            <li>Ex: Se você estudar, passará.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="funcoes-que" class="subsection-title">8.2. Funções morfossintáticas da palavra QUE</div>
+                <p>A palavra "QUE" também possui diversas funções:</p>
+                <ul>
+                    <li><strong>Pronome Relativo</strong>: Depois de substantivo, pronome relativo. Substituível por: o qual, a qual, os quais, as quais.
+                        <ul>
+                            <li>Ex: O livro **que** li é bom. (O livro o qual li é bom).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conjunção Integrante</strong>: Verbo antes, conjunção integrante. (=isso)
+                        <ul>
+                            <li>Ex: Ele percebeu **que** ela mentia. (Ele percebeu isso).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preposição</strong>: O antecedente é o verbo "ter".
+                        <ul>
+                            <li>Ex: Temos **que** sair mais. (Temos de sair mais).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Substantivo</strong>: Antecedente artigo.
+                        <ul>
+                            <li>Ex: Ele tem um **quê** de interessante.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Advérbio</strong>: Não possui antecedente, inicia o período e deve ter ao lado um adjetivo.
+                        <ul>
+                            <li>Ex: **Que** lindas flores!</li>
+                        </ul>
+                    </li>
+                    <li><strong>Partícula Expletiva (de Realce)</strong>: O "que" pode ser retirado e não faz falta para o sentido da frase.
+                        <ul>
+                            <li>Ex: Ele **que** saiu correndo. Eu **é que** não vejo a hora de passar.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="crase" class="card">
+                <h2 class="chapter-title">9. Crase</h2>
+                <div id="o-que-e-crase" class="subsection-title">9.1. O que é Crase?</div>
+                <p>Crase é a junção ou contração de duas vogais "A", uma final (preposição) e outra inicial (artigo definido ou pronome demonstrativo iniciado por "a").</p>
+                <ul>
+                    <li>Ex1. Vamos **a** + **a** loja = Vamos **à** loja.</li>
+                    <li>Ex2. Não me refiro a essa, mas a (aquela) da direita = Não me refiro a essa, mas **àquela** da direita.</li>
+                </ul>
+
+                <div id="regras-crase" class="subsection-title">9.2. Regras da Crase</div>
+                <h3 class="subsection-title text-gray-700">9.2.1. Uso Proibido</h3>
+                <ul>
+                    <li><strong>ANTES DE MASCULINOS EM GERAL</strong>:
+                        <ul>
+                            <li>Ex: O governo falava **a** respeito de políticas públicas. Pagamentos **a** prazo devem ser negociados.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE VERBOS</strong>:
+                        <ul>
+                            <li>Ex: **A** partir de hoje, não faça isso. Com datas **a** definir, o governo não falou muita coisa.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE ARTIGOS INDEFINIDOS</strong> (um, uma, uns, umas):
+                        <ul>
+                            <li>Ex: Referiu-se a uma decisão da banca. Era favorável a uma atitude mais severa.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ENTRE PALAVRAS REPETIDAS</strong>:
+                        <ul>
+                            <li>Ex: Boca **a** boca/ cara **a** cara/ frente **a** frente. Uma **a** uma/ gota **a** gota/ mês **a** mês…</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE NUMERAIS CARDINAIS (exceto horas)</strong>:
+                        <ul>
+                            <li>Ex: Minha casa fica **a dois** quilômetros daqui. De 15 **a 20** de novembro, haverá uma conferência…</li>
+                            <li>Crase em indicação de hora: Dá uma da tarde **à uma** da manhã. Ele trabalha das cinco **às vinte** horas. Chegou **à uma**, saiu **às** três.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE PALAVRA NO PLURAL</strong>:
+                        <ul>
+                            <li>Ex: Os brasileiros não obedecem **a leis** de trânsito.</li>
+                        </ul>
+                    </li>
+                    <li><strong>DEPOIS DE PREPOSIÇÃO (EXCETO “ATÉ”)</strong>:
+                        <ul>
+                            <li>Ex: Jurou **perante** a justiça dizer a verdade. DESDE a última semana, nada mais foi falado… A reunião foi marcada **para** as duas horas…</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE PRONOMES PESSOAIS</strong> (eu, tu, ele, ela, mim, nós...):
+                        <ul>
+                            <li>Ex: Era favorável a ELA, não a MIM.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE PRONOMES DE TRATAMENTO (EXCETO SENHORA E SENHORITA)</strong>:
+                        <ul>
+                            <li>Ex: Referiu-se a VOSSA EXCELÊNCIA com respeito. Dirigiu-se a VOSSA SENHORIA na ocasião. Enviou o texto a SUA SENHORIA...</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE PRONOMES INDEFINIDOS</strong> (cada, alguma, nenhuma, qualquer, certo, tudo, nada, pouco...):
+                        <ul>
+                            <li>Ex: Obedeceria a ALGUMA daquelas ordens. Preferia sua ideia a CADA opinião dela.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ANTES DE PRONOMES DEMONSTRATIVOS NÃO INICIADOS PELA LETRA “A”</strong> (este, esta, isso, isto, essa…):
+                        <ul>
+                            <li>Ex: Era favorável a ESSA atitude. Jamais obedecerei a ESTA ordem.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="subsection-title text-gray-700">9.2.2. Uso Obrigatório</h3>
+                <ul>
+                    <li>Em expressões **adverbiais**, propositivas ou conjuntivas (circunstâncias) formadas por **palavras femininas**, emprega-se por tradição linguística, o acento grave.
+                        <ul>
+                            <li>Ex: **À noite**, **À tarde**, **ÀS vezes**, **À medida que**, **À proporção que**, **À procura**, **À espera**, **À direita**, **À esquerda…**</li>
+                        </ul>
+                    </li>
+                    <li><strong>EM INDICAÇÃO DE HORAS</strong>: (exceto depois de preposição)
+                        <ul>
+                            <li>Ex: Chegou **ÀS** duas horas. Saiu **ÀS** cinco. Voltou **ÀS** dez. O funk começa **ÀS** 23h.</li>
+                        </ul>
+                    </li>
+                    <li><strong>EM EXPRESSÕES QUE SUBENTENDEM AS PALAVRAS À MODA DE / À MANEIRA DE</strong>:
+                        <ul>
+                            <li>Ex: Escrevia **À** Machado de Assis (à maneira de).</li>
+                        </ul>
+                    </li>
+                    <li><strong>SE HOUVER FUSÃO ENTRE A PREPOSIÇÃO “A” E UM PRONOME DEMONSTRATIVO INICIADO PELA LETRA “A”</strong> (aquele, aquela…):
+                        <ul>
+                            <li>Ex: Preferia isso **ÀQUELA** blusa. Voltou **ÀQUELE** lugar.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="subsection-title text-gray-700">9.2.3. Uso Facultativo</h3>
+                <span class="macete"><strong>Macete:</strong> ATÉ SUA MARIA</span>
+                <ul>
+                    <li><strong>ATÉ</strong>: depois da preposição “até”.</li>
+                    <li><strong>SUA</strong>: antes de pronome possessivo feminino no singular.
+                        <ul>
+                            <li>Ex.: "Nada supera **à/a** sua atitude". (Atitude é substantivo e é a "acompanhante" do pronome possessivo "sua", logo a crase é facultativa).</li>
+                            <li>Quando **não** houver substantivo, o emprego da crase é **obrigatório**. Ex.: "Minha caminhonete é igual **à** sua (sem substantivo, apenas pronome possessivo).</li>
+                            <li>Se o pronome possessivo (sua, meu, minha...) estiver no plural, a crase é **obrigatória**!</li>
+                        </ul>
+                    </li>
+                    <li><strong>MARIA</strong>: Antes de substantivos próprios femininos.</li>
+                </ul>
+                <div class="image-description">
+                    <p>Descrição da imagem "10 mandamentos da crase":</p>
+                    <ol>
+                        <li>Diante de pronome, crase passa fome.</li>
+                        <li>Diante de masculino, crase é pepino.</li>
+                        <li>Diante de ação, crase é marcação.</li>
+                        <li>Palavras repetidas: crases proibidas.</li>
+                        <li>"A" + "aquele" - crase nele!</li>
+                        <li>Vou a, volto da = crase há!</li>
+                        <li>Vou a, volto de = crase pra quê?</li>
+                        <li>Diante de cardinal, crase faz mal.</li>
+                        <li>Quando for hora, crase sem demora.</li>
+                        <li>Palavra determinada, crase liberada.</li>
+                        <li>Sendo à moda de, crase vai vencer.</li>
+                        <li>Adverbial, feminina e locução = manda crase, meu irmão!</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="interpretacao-texto" class="card">
+                <h2 class="chapter-title">10. Interpretação de Texto</h2>
+                <div id="nocoes-gerais-interpretacao" class="subsection-title">10.1. Noções Gerais de Compreensão e Interpretação de Texto</div>
+                <ul>
+                    <li><strong>Compreensão</strong>: Está **no texto**. (ex: segundo o texto, de acordo com o texto).</li>
+                    <li><strong>Interpretação</strong>: Vai **além do texto**. (ex: infere-se do texto, além do texto...).</li>
+                </ul>
+                <span class="macete"><strong>Dica 1:</strong> Ler mais de 1 vez o texto.</span>
+                <ol>
+                    <li>Leitura superficial.</li>
+                    <li>Ler parágrafo por parágrafo.</li>
+                    <li>Grifar a ideia central de cada parágrafo.</li>
+                </ol>
+                <p>Após a leitura, você deve ser capaz de responder:</p>
+                <ul>
+                    <li>O texto traz a ideia central de...?</li>
+                    <li>O texto fala sobre...?</li>
+                    <li>O foco central é falar sobre...?</li>
+                </ul>
+                <span class="tip"><strong>Dica:</strong> Para compreender, no texto me prender. Para interpretar, o texto extrapolar.</span>
+
+                <div id="denotacao-conotacao" class="subsection-title">10.2. Denotação e Conotação</div>
+                <ul>
+                    <li><strong>Denotação</strong>: É o uso da palavra no seu sentido original, literal, do Dicionário. É o sentido **real**, dicionarizado das palavras.
+                        <ul>
+                            <li>Ex. Depois de jogar bola, nós comemos um churrasco.</li>
+                            <li>Ex2. O banco estava cheio de gente.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conotação</strong>: Sentido **figurado**, depende do texto.
+                        <ul>
+                            <li>Ex. Ele comeu bola na prova de matemática.</li>
+                            <li>Ex2. O banco estava um formigueiro.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="pressupostos-subentendidos" class="subsection-title">10.3. Pressupostos e Subentendidos</div>
+                <ul>
+                    <li><strong>Pressupostos</strong>: São aquelas ideias não expressas de maneira explícita, mas que o leitor pode inferir a partir de certas palavras ou expressões contidas na frase.
+                        <ul>
+                            <li>Exemplo: “um dos” mais lindos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Subentendidos</strong>: São insinuações não marcadas linguisticamente. As inferências dependem do contexto discursivo, ou seja, da situação comunicativa.</li>
+                </ul>
+
+                <div id="reificacao" class="subsection-title">10.4. Reificação</div>
+                <ul>
+                    <li><strong>Reificação</strong>:
+                        <ul>
+                            <li>Considerar algo abstrato como coisa material;</li>
+                            <li>Representar o ser humano como objeto físico;</li>
+                            <li>Transformar o homem ou algo em coisa - objeto de consumo.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="figuras-linguagem" class="subsection-title">10.5. Figuras de Linguagem</div>
+                <ul>
+                    <li><strong>Metáfora</strong>: Afirmação, figurado -> é, são. Estabelece uma relação de semelhança ao usar um termo com significado diferente do habitual.
+                        <ul>
+                            <li>Exemplo: A menina é uma flor.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Comparação</strong>: Tem uma palavra explícita que expressa claramente a comparação (como, parecia, tal qual, assim como).
+                        <ul>
+                            <li>Exemplo: Minha filha é **como** um anjo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metonímia</strong>: É a troca de um nome por outro.
+                        <ul>
+                            <li>Ex: Vou tomar uma xícara de café (referindo-se ao café que está dentro da xícara).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hipérbole</strong>: Exagero intencional.
+                        <ul>
+                            <li>Ex: Estou morrendo de fome, morto de sono, gastou rios de dinheiro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eufemismo</strong>: Intenção de suavizar um fato ou atitude.
+                        <ul>
+                            <li>Ex: "Foi para o céu" (morreu).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Antítese</strong>: Palavras com sentidos opostos (ex: ruim/bom, perto/longe).</li>
+                    <li><strong>Paradoxo</strong>: Referente a duas ideias contraditórias em uma só frase ou pensamento (ex: o silêncio é ensurdecedor).</li>
+                    <li><strong>Prosopopeia ou Personificação</strong>: Atribuição de características/hábitos/comportamentos humanos a objetos, animais ou coisas (ex: o sol está tímido hoje).</li>
+                    <li><strong>Catacrese</strong>: Emprego de uma palavra no sentido figurado por não haver um termo próprio (ex: dente de alho, a perna do óculos, pé da mesa).</li>
+                    <li><strong>Onomatopeia</strong>: Imitação de um som (ex: ding-dong).</li>
+                    <li><strong>Sinestesia</strong>: Mistura de diferentes impressões sensoriais (ex: o doce som da flauta).</li>
+                </ul>
+
+                <div id="causa-consequencia" class="subsection-title">10.6. Causa x Consequência</div>
+                <ul>
+                    <li><strong>Causa</strong>: É um evento, ação, é aquilo que gera ou dá origem a algo.</li>
+                    <li><strong>Consequência</strong>: É o resultado de uma causa.
+                        <ul>
+                            <li>Ex.: “A rua está molhada porque choveu”. Evidentemente que a chuva (causa) levou a rua a ficar molhada (consequência).</li>
+                            <li><span class="macete"><strong>Macete:</strong> "O FATO DE ... (causa) FAZ COM QUE... (consequência)".</span></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="tipologia-textual" class="subsection-title">10.7. Tipologia Textual</div>
+                <ul>
+                    <li><strong>Narrativo</strong>: Contar uma história: sucessão de acontecimentos.</li>
+                    <li><strong>Descritivo</strong>: Foto com palavras: nada acontece na descrição. Transmite informações detalhadas sobre pessoas, objetos, lugares, sensações, entre outros elementos. Exemplos: diários, relatos de viagens, folhetos turísticos, cardápios de restaurantes, anúncios de classificados.</li>
+                    <li><strong>Dissertativo</strong>: Opinião de quem está escrevendo: defendendo uma opinião (convencer quem está lendo). Expõe argumentos, ideias e opiniões sobre um determinado tema. É um texto científico estruturado em introdução, desenvolvimento e conclusão.</li>
+                    <li><strong>Expositivo</strong>: Texto Informativo: informando algo. Fornece informações de maneira objetiva e imparcial. Exemplos: notícias, artigos, reportagens, resumos escolares, verbetes de dicionário.</li>
+                    <li><strong>Injuntivo</strong>: É uma instrução: uma ordem. Usa ideias com o objetivo de persuadir o destinatário da mensagem a praticar algum ato ou ter alguma atitude. EXEMPLO: “SEJA FELIZ”.</li>
+                </ul>
+
+                <div id="significacao-contextual" class="subsection-title">10.8. Significação Contextual de Palavras e Expressões. Sinônimos e Antônimos.</div>
+                <ul>
+                    <li><strong>Sinônimos</strong>: Palavras que possuem significados próximos.
+                        <ul>
+                            <li>Ex. Casa, lar, moradia, residência; Longe, distante.</li>
+                            <li>É muito importante usar sinônimos na redação para evitar repetição de palavras.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Antônimos</strong>: Palavras que possuem significados Contrário.
+                        <ul>
+                            <li>Ex. Mal/bem, cheio/vazio, fraco/forte, longe/perto.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Polissemia</strong>: É a propriedade que uma mesma palavra tem de apresentar mais de um significado nos múltiplos contextos em que aparece.
+                        <ul>
+                            <li>Exemplos: Cabo (posto militar, acidente geográfico, cabo da vassoura, da faca); Banco (instituição comercial financeira, assento); Manga (parte da roupa, fruta).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="elipse" class="subsection-title">10.9. Elipse</div>
+                <ul>
+                    <li><strong>Elipse</strong>: É a figura de linguagem utilizada para omitir termos não mencionados expressamente, mas subentendidos no contexto.
+                        <ul>
+                            <li>Ex.: “olhava-me com seus marejados e dizia”. (Subentende-se "olhos" - Olhava-me com seus *olhos* marejados).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="coesao-coerencia" class="card">
+                <h2 class="chapter-title">11. Coesão e Coerência</h2>
+                <div id="coesao-coerencia-geral" class="subsection-title">11.1. Coesão e Coerência</div>
+                <ul>
+                    <li><strong>Coesão</strong>: Refere-se à conexão e organização das palavras e frases dentro de um texto, usando elementos como conjunções, pronomes, repetição de palavras, entre outros. É como as partes de um texto estão "coladas" umas nas outras de maneira lógica.
+                        <ul>
+                            <li>Exemplo 1: Ele comprou um livro **e** também adquiriu um caderno. (uso da conjunção "e" para ligar as duas frases).</li>
+                            <li>Exemplo 2: Maria gosta de nadar. A natação **a** ajuda a relaxar. (repetição do pronome "a" para se referir a Maria).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Coerência</strong>: Diz respeito à lógica e sentido global do texto. Um texto é coerente quando as ideias estão relacionadas de maneira clara e fazem sentido para o leitor. A coerência trata da compreensão geral e fluidez das ideias no texto.
+                        <ul>
+                            <li>Exemplo 1: João acordou cedo. Pegou seu guarda-chuva. O sol estava forte. (Falta de coerência, já que o guarda-chuva não faz sentido com o sol forte.)</li>
+                            <li>Exemplo 2: Ana foi à escola. Ela esqueceu seus livros em casa. Voltou para buscá-los. (Coerente, pois a ação de esquecer os livros justifica o retorno para buscá-los.)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div id="anafora-catafora" class="subsection-title">11.2. Anáfora e Catáfora</div>
+                <ul>
+                    <li><strong>Anáfora</strong>: Retoma o que foi dito **anteriormente**.
+                        <ul>
+                            <li>Ex: **ESTUDANTES** assistem à tv, **ELES** estão curtindo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Catáfora</strong>: Antecipa o que vai ser dito **posteriormente**.
+                        <ul>
+                            <li>Ex: Podemos citar **estas** causas para a desigualdade: concentração de renda, desvio de dinheiro público e individualismo da sociedade.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="reescritura-texto" class="card">
+                <h2 class="chapter-title">12. Reescritura de Texto</h2>
+                <div id="pontos-importantes-reescritura" class="subsection-title">12.1. Pontos Importantes na Reescritura</div>
+                <ol>
+                    <li>Tenha bastante cuidado com as pegadinhas de erros gramaticais.
+                        <ul>
+                            <li>Exemplo: crase, pontos, vírgulas, concordância verbal, acentuação e voz.</li>
+                        </ul>
+                    </li>
+                    <li>Verificar equivalências entre tempos e modos verbais, pois devem ser preservados na reescritura.
+                        <ul>
+                            <li>EX: João comeu o bolo = a frase está no TEMPO pretérito e no MODO do indicativo.</li>
+                            <li>-O bolo foi comido por João= observe que a frase manteve o mesmo TEMPO e MODO.</li>
+                            <li><strong>Tempos verbais</strong>:
+                                <ul>
+                                    <li>PRETÉRITO: ação passada</li>
+                                    <li>PRESENTE: momento em que se fala</li>
+                                    <li>FUTURO: momento vindouro.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Modos verbais</strong>:
+                                <ul>
+                                    <li>INDICATIVO: Indica certeza e convicção.</li>
+                                    <li>SUBJUNTIVO: Indica incerteza e possibilidade.</li>
+                                    <li>IMPERATIVO: Indica ordem.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Vozes verbais</strong>:
+                                <ul>
+                                    <li>Voz ativa;</li>
+                                    <li>Voz passiva;</li>
+                                    <li>Voz reflexiva.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Verificar a equivalência das <strong>CONJUNÇÕES</strong>, pois elas devem preservar os mesmos sentidos.</li>
+                </ol>
+            </section>
+
+            <section id="revisor-texto" class="card">
+                <h2 class="chapter-title">13. Ferramenta: Revisor de Texto ✨</h2>
+                <p class="mb-4">Cole o seu texto abaixo e deixe a inteligência artificial do Gemini revisá-lo para corrigir erros gramaticais, ortográficos, de pontuação e melhorar a clareza e fluidez.</p>
+
+                <div class="mb-4">
+                    <label for="text-input" class="block text-gray-700 text-sm font-bold mb-2">Seu texto:</label>
+                    <textarea id="text-input" class="textarea-reviewer py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" placeholder="Cole o texto que deseja revisar aqui..."></textarea>
+                </div>
+
+                <button id="review-button" class="button-reviewer">
+                    Revisar Texto com Gemini
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M9.937 15.25l-4.072 2.138L7 12.68l-3.065-3.264 4.14-1.036L9.937 2l2.89 6.38 4.14 1.036-3.065 3.264 4.072-2.138L14.937 22l-2.89-6.38z"/></svg>
+                </button>
+
+                <div id="loading-indicator" class="loading-indicator">
+                    A rever o seu texto... por favor, aguarde.
+                </div>
+
+                <div id="response-area" class="response-area mt-4" style="display:none;">
+                    <h3 class="font-semibold text-lg mb-2">Texto Revisado:</h3>
+                    <p id="reviewed-text"></p>
+                </div>
+            </section>
+
+            <section id="explorador-conceitos" class="card">
+                <h2 class="chapter-title">14. Ferramenta: Explorador de Conceitos ✨</h2>
+                <p class="mb-4">Tem dúvidas sobre algum conceito gramatical? Insira-o abaixo e obtenha uma explicação detalhada e exemplos, gerados pela inteligência artificial do Gemini.</p>
+
+                <div class="mb-4">
+                    <label for="concept-input" class="block text-gray-700 text-sm font-bold mb-2">Insira o conceito gramatical (ex: "Metáfora", "Regência Verbal"):</label>
+                    <input type="text" id="concept-input" class="input-concept py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ex: Pronome Relativo">
+                </div>
+
+                <button id="explore-concept-button" class="button-concept-explorer">
+                    Explorar Conceito com Gemini
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 6c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 22V14"/></svg>
+                </button>
+
+                <div id="concept-loading-indicator" class="loading-indicator">
+                    A explorar... por favor, aguarde.
+                </div>
+
+                <div id="concept-response-area" class="response-area mt-4" style="display:none;">
+                    <h3 class="font-semibold text-lg mb-2">Explicação e Exemplos:</h3>
+                    <p id="concept-explanation"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
