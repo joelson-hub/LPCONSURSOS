@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Prompt for the LLM
-            const prompt = `Revise o seguinte texto em português do brasil para corrigir erros gramaticais, melhorar a clareza e a fluidez. Retorne apenas o texto revisado.:\n\n"${inputText}"`;
+            const prompt = `Revise o seguinte texto em português de Portugal para corrigir erros gramaticais, melhorar a clareza e a fluidez. Retorne apenas o texto revisado.:\n\n"${inputText}"`;
 
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
